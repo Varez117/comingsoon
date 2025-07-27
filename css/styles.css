@@ -170,7 +170,9 @@ the website, in dark theme
 .section__title-center{
   text-align: center;
 }
-
+h2.section__title{
+  text-align: left;
+}
 .container{
   max-width: 968px;
   margin-left: var(--mb-1-5);
