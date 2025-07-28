@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Portafolio de Christo Alvarez Rodriguez, desarrollador backend especializado en Python, Java y C++. Proyectos destacados, experiencia y contacto para colaboración." />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <!-- Remixicon CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Devicon CDN for technology icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <title>Coming soon.</title>
+</head>
+<body>
+    <!-- Header and Navigation -->
+    <header class="header" id="header">
+        <nav class="nav container" id="nav-menu" role="navigation">
+            <a href="#home" class="nav__logo">
+                Varez 
+            </a>
+            <div class="nav__menu" id="nav-menu-list">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link active-link">Inicio</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#about" class="nav__link">Experiencia</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#steps" class="nav__link">Destacados</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#education_section" class="nav__link">Educación</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#contact" class="nav__link">Contacto</a>
+                    </li>
+                </ul>
+                <button class="nav__close" id="nav-close" aria-label="Cerrar menú">
+                    <i class="ri-close-line"></i>
+                </button>
+            </div>
+            <div class="nav__btns">
+                <!-- Theme change button -->
+                <i class="ri-moon-line change-theme" id="theme-button"></i>
+                <!-- Menu toggle button -->
+                <button class="nav__toggle" id="nav-toggle" aria-label="Abrir menú">
+                    <i class="ri-menu-line"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <!-- Home Section -->
+        <section class="home" id="home">
+            <div class="home__container container grid">
+                <div class="home__data">
+                    <h1 class="home__title">
+                        Primero resuelve el problema <br> después escribe el código.
+                    </h1>
+                    <a href="#about" class="button button--flex">
+                        Explorar <i class="ri-arrow-right-down-line button__icon"></i>
+                    </a>
+                </div>
+                <!-- Animated code block -->
+                <div class="home__code">
+                    <div class="codigo-vscode">
+                        <pre><code id="codigo"></code><span class="cursor">|</span></pre>
+                    </div>
+                </div>
+                <!-- Social links -->
+                <div class="home__social">
+                    <span class="home__social-follow">Contáctame</span>
+                    <div class="home__social-links">
+                        <a href="https://www.facebook.com/christopher.alvarez.5895834" target="_blank" class="home__social-link">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="https://www.instagram.com/varezchristo" target="_blank" class="home__social-link">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                        <a href="https://wa.link/qs7z03" target="_blank" class="home__social-link">
+                            <i class="ri-whatsapp-line"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/christo-álvarez-a5b132230" target="_blank" class="home__social-link">
+                            <i class="ri-linkedin-box-line"></i>
+                        </a>
+                        <a href="https://github.com/Varez117" target="_blank" class="home__social-link">
+                            <i class="ri-github-line"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- About Section -->
+        <section class="about section container" id="about">
+            <div class="about__container grid">
+                <div class="about__card">
+                    <img src="img/me.webp" alt="Foto de Varez" class="about__img-card">
+                    <h2 class="about__name">Christo Alvarez Rodriguez</h2>
+                    <div class="about__skills-card">
+                        
+                        <div class="skills__icons">
+                            <i class="devicon-python-plain" title="Python"></i>
+                            <i class="devicon-sqlite-plain" title="SQLite"></i>
+                            <i class="devicon-java-plain" title="Java"></i>
+                            <i class="devicon-cplusplus-plain" title="C++"></i>
+                            <i class="devicon-csharp-plain" title="C#"></i>
+                            <i class="devicon-html5-plain" title="HTML5"></i>
+                            <i class="devicon-css3-plain" title="CSS3"></i>
+                            <i class="devicon-javascript-plain" title="JavaScript"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="about__data">
+                    <h2 class="section__title about__title">
+                        Quién soy y por qué <br> haríamos buen equipo.
+                    </h2>
+                    <p class="about__description">
+                        Desarrollador backend con 2 años de constante aprendizaje en Python, Java, C++ y C#.
+                    </p>
+                    <div class="about__details">
+                        <!-- List of personal qualities and experience -->
+                        <p class="about__details-description">
+                            <i class="ri-checkbox-fill about__details-icon"></i>
+                            He participado en proyectos y gestión de bases de datos de mi universidad.
+                        </p>
+                        <p class="about__details-description">
+                            <i class="ri-checkbox-fill about__details-icon"></i>
+                            Me destaco por ser ocurrente, detallista y ordenado, lo que me permite mantener un enfoque constante en la calidad del código.
+                        </p>
+                        <p class="about__details-description">
+                            <i class="ri-checkbox-fill about__details-icon"></i>
+                            Suelo asumir responsabilidades con persistencia y me adapto con facilidad a nuevos equipos y entornos de trabajo.
+                        </p>
+                        <p class="about__details-description">
+                            <i class="ri-checkbox-fill about__details-icon"></i>
+                            Aporto compromiso, puntualidad y una actitud de colaboración que mejora la dinámica del equipo.
+                        </p>
+                        <p class="about__details-description">
+                            <i class="ri-checkbox-fill about__details-icon"></i>
+                            Me enfoco en escribir código limpio y optimizado, y siempre busco formas de mejorar implementaciones ya existentes.
+                        </p>
+                    </div>
+                    <a href="#steps" class="button--link button--flex">
+                        Conóceme mejor <i class="ri-arrow-right-down-line button__icon"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- Projects Section -->
+        <section class="steps section container" id="steps">
+            <div class="steps__bg">
+                <h2 class="section__title-center steps__title">
+                    Algunos de mis <br> proyectos destacados
+                </h2>
+                <div class="steps__container grid">
+                    <!-- Project cards -->
+                    <div class="steps__card">
+                        <div class="img_steps_card" id="img_steps_card"></div>
+                        <div class="steps__card-number">01</div>
+                        <h3 class="steps__card-title">Noova</h3>
+                        <p class="steps__card-description">
+                            Plataforma enfocada en la promoción de la salud natural mediante el uso de plantas medicinales. Implementación de base de datos, interfaz y lógica backend.
+                        </p>
+                        <div class="steps__card-tools">
+                            <i class="devicon-python-plain colored"></i>
+                            <i class="devicon-sqlite-plain colored"></i>
+                            <i class="devicon-html5-plain colored"></i>
+                            <i class="devicon-css3-plain colored"></i>
+                            <i class="devicon-javascript-plain colored"></i>
+                        </div>
+                    </div>
+                    <div class="steps__card">
+                        <div class="steps__card-number">02</div>
+                        <h3 class="steps__card-title">Gestor de BD Universitario</h3>
+                        <p class="steps__card-description">
+                            Sistema para organizar, administrar y visualizar datos académicos de forma eficiente. Incluyó backend estructurado y consultas SQL optimizadas.
+                        </p>
+                        <div class="steps__card-tools">
+                            <i class="devicon-java-plain colored"></i>
+                            <i class="devicon-mysql-plain colored"></i>
+                            <i class="devicon-git-plain colored"></i>
+                        </div>
+                    </div>
+                    <div class="steps__card">
+                        <div class="steps__card-number">03</div>
+                        <h3 class="steps__card-title">Mini sistema de inventario</h3>
+                        <p class="steps__card-description">
+                            Aplicación local en C# para registrar y consultar inventario de manera rápida, con enfoque en simplicidad y eficiencia.
+                        </p>
+                        <div class="steps__card-tools">
+                            <i class="devicon-csharp-plain colored"></i>
+                            <i class="devicon-dot-net-plain colored"></i>
+                            <i class="devicon-sqlite-plain colored"></i>
+                        </div>
+                    </div>
+                    <div class="steps__card">
+                        <div class="steps__card-number">04</div>
+                        <h3 class="steps__card-title">WeatherApp con API REST</h3>
+                        <p class="steps__card-description">
+                            Aplicación web que consume una API pública para mostrar el clima actual y pronósticos. Interfaz amigable y diseño responsivo.
+                        </p>
+                        <div class="steps__card-tools">
+                            <i class="devicon-javascript-plain colored"></i>
+                            <i class="devicon-html5-plain colored"></i>
+                            <i class="devicon-css3-plain colored"></i>
+                            <i class="devicon-bootstrap-plain colored"></i>
+                        </div>
+                    </div>
+                    <div class="steps__card">
+                        <div class="steps__card-number">05</div>
+                        <h3 class="steps__card-title">Chat en tiempo real</h3>
+                        <p class="steps__card-description">
+                            Sistema de mensajería web en tiempo real utilizando sockets, ideal para aprender sobre comunicación cliente-servidor y sincronización de datos.
+                        </p>
+                        <div class="steps__card-tools">
+                            <i class="devicon-nodejs-plain colored"></i>
+                            <i class="devicon-socketio-original colored"></i>
+                            <i class="devicon-express-original colored"></i>
+                        </div>
+                    </div>
+                    <div class="steps__card">
+                        <div class="steps__card-number">06</div>
+                        <h3 class="steps__card-title">Portafolio Profesional</h3>
+                        <p class="steps__card-description">
+                            Sitio web personal que muestra proyectos, habilidades, experiencia y contacto. Optimizado para SEO y adaptable a dispositivos móviles.
+                        </p>
+                        <div class="steps__card-tools">
+                            <i class="devicon-react-original colored"></i>
+                            <i class="devicon-tailwindcss-plain colored"></i>
+                            <i class="devicon-github-original colored"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Education Section -->
+        <section class="education section" id="education_section">
+            <h2 class="section__title">Mi Educación</h2>
+            <div class="timeline">
+                <!-- Timeline items for education -->
+                <div class="timeline__item">
+                    <div class="timeline__content">
+                        <span class="timeline__year">Actualmente</span>
+                        <h3 class="timeline__title">Ingeniería en TICs</h3>
+                        <p class="timeline__school">Tecnológico Nacional de México (TECNM)</p>
+                        <p class="timeline__description">
+                            Actualmente curso la carrera de Ingeniería en Tecnologías de la Información y Comunicación, donde desarrollo habilidades en redes, programación, ciberseguridad, bases de datos, inteligencia artificial y gestión de proyectos tecnológicos.
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="timeline__item">
+                    <div class="timeline__content">
+                        <span class="timeline__year">2023</span>
+                        <h3 class="timeline__title">Protección de Software y Seguridad de la IA</h3>
+                        <p class="timeline__school">Santander X</p>
+                        <p class="timeline__description">
+                            Curso intensivo enfocado en los principios de protección del software, derechos de autor, licencias y técnicas de seguridad aplicadas a sistemas que integran inteligencia artificial, reforzando las competencias en entornos digitales seguros.
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="timeline__item">
+                    <div class="timeline__content">
+                        <span class="timeline__year">2022</span>
+                        <h3 class="timeline__title">Manejo de Fórmulas y Funciones en Hoja de Cálculo</h3>
+                        <p class="timeline__school">CECATI</p>
+                        <p class="timeline__description">
+                            Capacitación orientada al dominio de herramientas avanzadas de Excel, como fórmulas lógicas, funciones financieras, estadísticas y herramientas de análisis de datos, utilizadas en contextos administrativos y empresariales.
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="timeline__item">
+                    <div class="timeline__content">
+                        <span class="timeline__year">2022</span>
+                        <h3 class="timeline__title">Emprendimiento de Alto Valor e Impacto</h3>
+                        <p class="timeline__school">Santander X</p>
+                        <p class="timeline__description">
+                            Curso centrado en la creación de modelos de negocio innovadores, liderazgo efectivo, análisis de mercado y la planificación estratégica para impulsar emprendimientos sostenibles con impacto positivo en la sociedad.
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="timeline__item">
+                    <div class="timeline__content">
+                        <span class="timeline__year">2016 - 2019</span>
+                        <h3 class="timeline__title">Título Técnico en Programación</h3>
+                        <p class="timeline__school">CECYTE</p>
+                        <p class="timeline__description">
+                            Formación técnica en desarrollo de software, con énfasis en algoritmos, estructuras de datos, bases de datos, interfaces gráficas y lenguajes como Java, C++, HTML, CSS y PHP. Experiencia en proyectos prácticos y resolución de problemas reales.
+                        </p>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact Section -->
+        <section class="contact section container" id="contact">                
+            <div class="contact__container grid">
+                <div class="contact__box">
+                    <h2 class="section__title">
+                        Platiquemos<br>probablemente creemos<br>una buena conexión.
+                    </h2>
+                    <div class="contact__data">
+                        <div class="contact__information nocopy">
+                            <h3 class="contact__subtitle">Llámame si quieres conversar:</h3>
+                            <span class="contact__description nocopy">
+                                <i class="ri-phone-line contact__icon"></i>
+                                +52 241 407 3434
+                            </span>
+                        </div>
+                        <div class="contact__information nocopy">
+                            <h3 class="contact__subtitle">Si prefieres, escríbeme un correo a:</h3>
+                            <span class="contact__description">
+                                <i class="ri-mail-line contact__icon"></i>
+                                musicianrz21@gmail.com
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Contact form -->
+                <form action="https://formsubmit.co/musicianrz21@gmail.com" method="POST">
+                    <div class="contact__inputs">
+                        <div class="contact__content">
+                            <input type="email" id="email" name="email" placeholder=" " class="contact__input" required>
+                            <label for="email" class="contact__label">Email</label>
+                        </div>
+                        <div class="contact__content">
+                            <input type="text" id="subject" name="subject" placeholder=" " class="contact__input" required>
+                            <label for="subject" class="contact__label">Asunto</label>
+                        </div>
+                        <div class="contact__content contact__area">
+                            <textarea id="message" name="message" placeholder=" " class="contact__input" required></textarea>                              
+                            <label for="message" class="contact__label">Mensaje</label>
+                        </div>
+                    </div>
+                    <button class="button button--flex">
+                        Enviar Mensaje
+                        <i class="ri-arrow-right-up-line button__icon"></i>
+                    </button>
+                </form>
+
+            </div>
+        </section>
+    </main>
+    <!-- Main JavaScript file -->
+    <script src="main.js"></script>
+    <script>
+        // Código para animar la escritura de código en la sección principal
+        const codeLines = [
+            "def merge_sort(arr):",
+            "    if len(arr) <= 1:",
+            "        return arr",
+            "",
+            "    mid = len(arr) // 2",
+            "    left = merge_sort(arr[:mid])",
+            "    right = merge_sort(arr[mid:])",
+            "",
+            "    return merge(left, right)",
+            "",
+            "def merge(left, right):",
+            "    result = []",
+            "    i = j = 0",
+            "",
+            "    while i < len(left) and j < len(right):",
+            "        if left[i] < right[j]:",
+            "            result.append(left[i])",
+            "            i += 1",
+            "        else:",
+            "            result.append(right[j])",
+            "            j += 1",
+            "",
+            "    result += left[i:]",
+            "    result += right[j:]",
+            "    return result",
+            "",
+            "nums = [38, 27, 43, 3, 9, 82, 10]",
+            "print(merge_sort(nums))"
+        ];
+        const codigo = document.getElementById("codigo");
+        const cursor = document.querySelector(".cursor");
+        let visibleLines = [];
+        let lineaIndex = 0;
+        let charIndex = 0;
+        let currentLine = "";
+        // Renderiza las líneas visibles en el bloque de código
+        function render() {
+            codigo.innerHTML = visibleLines.join("<br>");
+        }
+        // Función principal para escribir el código línea por línea y carácter por carácter
+        function escribir() {
+            if (lineaIndex < codeLines.length) {
+                const fullLine = codeLines[lineaIndex];
+                if (charIndex < fullLine.length) {
+                    currentLine += fullLine.charAt(charIndex);
+                    charIndex++;
+                    updateBuffer();
+                    setTimeout(escribir, 18);
+                } else {
+                    visibleLines.push(currentLine);
+                    if (visibleLines.length > 10) {
+                        visibleLines.shift();
+                    }
+                    currentLine = "";
+                    charIndex = 0;
+                    lineaIndex++;
+                    updateBuffer();
+                    setTimeout(escribir,0);
+                }
+            } else {
+                cursor.style.display = "none";
+            }
+        }
+        // Actualiza el contenido del bloque de código
+        function updateBuffer() {
+            const tempLines = [...visibleLines];
+            if (currentLine !== "") {
+                tempLines.push(currentLine);
+            }
+            if (tempLines.length > 10) {
+                tempLines.shift();
+            }
+            codigo.innerHTML = tempLines.join("<br>");
+        }
+        // Inicia la animación de escritura
+        escribir();
+    </script>
+</body>
+</html>
