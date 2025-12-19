@@ -401,6 +401,40 @@ h2.section__title{ text-align: left; }
   color: var(--first-color);
   margin-top: 0.15rem;
 }
+/* Información personal (Edad y Ubicación) */
+/* Información personal (Edad, Ubicación, Idioma) */
+.about__personal-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem; /* Espacio entre items */
+  margin-bottom: 1.5rem;
+  margin-top: -1rem;
+  flex-wrap: wrap; /* Importante: permite que baje de línea en pantallas muy pequeñas */
+}
+
+.about__info-item {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: var(--small-font-size);
+  color: var(--text-color);
+  font-weight: var(--font-medium);
+  white-space: nowrap; /* Evita que el texto "20 Años" se parta */
+}
+
+/* Color de los iconos */
+.about__info-item i {
+  color: var(--first-color);
+  font-size: 1.1rem;
+}
+
+/* Líneas separadoras */
+.about__separator {
+  color: var(--text-color-light);
+  font-weight: 300;
+  opacity: 0.6;
+}
 @media screen and (max-width: 767px) {
   .about__container { grid-template-columns: 1fr; }
   .about__card { max-width: 280px; margin: 0 auto; }
