@@ -73,12 +73,12 @@ body.dark-theme{
 
   --body-color: hsl(var(--hue), 8%, 12%);
   --container-color: hsl(var(--hue), 8%, 16%);
+  
   .home__social-follow, .home__social-follow::after, .home__social-link, .section__title, .about__details-icon, .button--link, .timeline__school{
     color: #dbadfc;
-    
   }
-  
 }
+
 .change-theme{ color: var(--title-color); font-size: 1.15rem; cursor: pointer; }
 .nav__btns{ display: inline-flex; align-items: center; column-gap: 1rem; }
 
@@ -185,7 +185,6 @@ h2.section__title{ text-align: left; }
   text-decoration: none;
 }
 
-/* Línea base oculta */
 .nav__link::after {
   content: '';
   position: absolute;
@@ -197,27 +196,23 @@ h2.section__title{ text-align: left; }
   transition: width 0.3s ease, background-color 0.3s ease;
 }
 
-/* Al hacer hover, línea aparece */
 .nav__link:hover::after {
   width: 70%;
   background-color: var(--first-color);
 }
 
-/* Si está activo, línea visible siempre */
 .active-link::after {
   width: 70%;
   background-color: var(--first-color);
 }
 .nav__menu {
-  right: -100%; /* Oculto por defecto */
+  right: -100%;
   transition: right 0.3s ease;
 }
 
 .nav__menu.show-menu {
-  right: 0; /* Visible al agregar la clase */
+  right: 0;
 }
-
-
 
 /*=============== HOME ===============*/
 .home{ padding: 3.5rem 0 2rem; }
@@ -232,7 +227,7 @@ h2.section__title{ text-align: left; }
   border-radius: 8px;
   box-shadow: 0 0 20px #00000060;
   overflow: hidden;
-  height: 300px; /* OPTIMIZACIÓN: Altura fija para evitar layout shifts */
+  height: 300px;
   font-size: 1rem;
   font-family: 'Courier New', monospace;
   line-height: 1.4;
@@ -254,7 +249,6 @@ h2.section__title{ text-align: left; }
   row-gap: 3.5rem;
   margin-top: -3rem ;
 }
-
 
 .home__social-follow{
   font-weight: var(--font-medium);
@@ -336,7 +330,6 @@ h2.section__title{ text-align: left; }
   border-radius: 50%;
   object-fit: cover;
   margin: 0 auto 1rem auto;
-  
   aspect-ratio: 1/1; 
 }
 .about__name {
@@ -348,7 +341,6 @@ h2.section__title{ text-align: left; }
 .about__skills-card {
   background-color: var(--first-color-lighten);
   border-radius: 8px;
-  
 }
 .skills__title {
   font-weight: var(--font-semi-bold);
@@ -364,15 +356,12 @@ h2.section__title{ text-align: left; }
   padding: .5rem;
   border-radius: 5px;
 }
-/* CAMBIO DE COLOR EN ICONOS DE HABILIDADES */
 .skills__icons i {
   font-size: 1.5rem;
-  /* Color claro para contrastar con el fondo oscuro del contenedor */
   color: var(--body-color); 
   transition: color 0.3s ease;
   cursor: default;
 }
-/* Color morado al pasar el mouse */
 .skills__icons i:hover { color: var(--first-color); }
 .about__data { color: var(--text-color); }
 .about__title {
@@ -401,16 +390,14 @@ h2.section__title{ text-align: left; }
   color: var(--first-color);
   margin-top: 0.15rem;
 }
-/* Información personal (Edad y Ubicación) */
-/* Información personal (Edad, Ubicación, Idioma) */
 .about__personal-info {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.75rem; /* Espacio entre items */
+  gap: 0.75rem;
   margin-bottom: 1.5rem;
   margin-top: -1rem;
-  flex-wrap: wrap; /* Importante: permite que baje de línea en pantallas muy pequeñas */
+  flex-wrap: wrap;
 }
 
 .about__info-item {
@@ -420,16 +407,14 @@ h2.section__title{ text-align: left; }
   font-size: var(--small-font-size);
   color: var(--text-color);
   font-weight: var(--font-medium);
-  white-space: nowrap; /* Evita que el texto "20 Años" se parta */
+  white-space: nowrap;
 }
 
-/* Color de los iconos */
 .about__info-item i {
   color: var(--first-color);
   font-size: 1.1rem;
 }
 
-/* Líneas separadoras */
 .about__separator {
   color: var(--text-color-light);
   font-weight: 300;
@@ -442,20 +427,18 @@ h2.section__title{ text-align: left; }
   .skills__icons i { font-size: 1.5rem; gap: 1rem; }
 }
 
-/*=============== PROJECTS (Anteriormente STEPS) ===============*/
-/* Contenedor morado */
+/*=============== PROJECTS ===============*/
 .projects__bg {
   background-color: var(--container-color);
-  padding: 2rem 2rem 3rem; /* Padding más ajustado */
+  padding: 2rem 2rem 3rem;
   border-radius: 1rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  
 }
 
 .projects__title {
   color: var(--title-color);
   text-align: center;
-  font-size: var(--h2-font-size); /* Un poco más grande */
+  font-size: var(--h2-font-size);
   margin-bottom: 2.5rem;
 }
 
@@ -465,11 +448,10 @@ h2.section__title{ text-align: left; }
   gap: 1.5rem;
 }
 
-/* Tarjeta Blanca */
 .projects__card {
-  background-color: #fff; /* Siempre blanca para replicar imagen */
+  background-color: #fff;
   border-radius: 1rem;
-  overflow: hidden; /* Para que la imagen no se salga de las esquinas */
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -481,16 +463,14 @@ h2.section__title{ text-align: left; }
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
-
 .projects__img {
   width: 100%;
-  height: 170px; /* Mantiene la altura fija que tenías antes */
-  object-fit: cover; /* CLAVE: Hace que la imagen llene el espacio sin estirarse */
-  object-position: center; /* Centra la imagen */
-  border-bottom: 1px solid #f0f0f0; /* Opcional: una línea sutil abajo */
+  height: 170px;
+  object-fit: cover;
+  object-position: center;
+  border-bottom: 1px solid #f0f0f0;
 }
 
-/* Contenido de la tarjeta */
 .projects__content-wrapper {
   padding: 1.5rem;
   display: flex;
@@ -500,20 +480,19 @@ h2.section__title{ text-align: left; }
 
 .projects__card-title {
   font-size: var(--h3-font-size);
-  color: #000; /* Título negro fuerte */
+  color: #000;
   margin-bottom: 0.5rem;
   font-weight: 700;
 }
 
 .projects__card-description {
   font-size: var(--small-font-size);
-  color: #666; /* Texto gris */
+  color: #666;
   line-height: 1.5;
   margin-bottom: 1.5rem;
   flex-grow: 1;
 }
 
-/* Herramientas (Iconos) */
 .projects__card-tools {
   display: flex;
   gap: 0.75rem;
@@ -521,7 +500,6 @@ h2.section__title{ text-align: left; }
   font-size: 1.5rem;
 }
 
-/* Enlaces (Code / Demo) */
 .projects__links {
   display: flex;
   gap: 1.5rem;
@@ -543,18 +521,13 @@ h2.section__title{ text-align: left; }
   color: var(--first-color-alt);
 }
 
-/* En modo oscuro, ajustar solo el contenedor principal si se desea */
-body.dark-theme .projects__bg {
-  background-color: var(--container-color); /* Mantiene morado vibrante en dark theme también, como la imagen */
-}
 body.dark-theme .projects__card {
-  box-shadow: 0 12px 15px rgba(0, 0, 0, .3);/* Tarjeta blanca en dark theme también */
+  box-shadow: 0 12px 15px rgba(0, 0, 0, .3);
 }
 
 body.dark-theme .home__social-follow::after{
-  background-color: #dbadfc; /* Color claro para enlaces en dark theme */
+  background-color: #dbadfc;
 }
-
 
 /*=============== EDUCATION ===============*/
 .education { padding: 2rem 1rem; max-width: 720px; margin: 0 auto; }
@@ -673,18 +646,18 @@ body.dark-theme .home__social-follow::after{
 }
 .contact__information.nocopy{ user-select: none; }
 
-/*=============== FOOTER (VERSIÓN DELGADA) ===============*/
+/*=============== FOOTER ===============*/
 .footer {
-  padding-top: 1rem; /* Menos espacio antes del footer */
+  padding-top: 1rem;
 }
 
 .footer__bg {
   background-color: var(--first-color);
-  padding: 1.5rem 0; /* REDUCIDO: Mucho menos relleno arriba y abajo */
+  padding: 1.5rem 0;
 }
 
 .footer__title {
-  font-size: var(--h1-font-size); /* Un poco más pequeño que h1 */
+  font-size: var(--h1-font-size);
   margin-bottom: 0.25rem;
   display: flex;
   align-items: center;
@@ -693,7 +666,7 @@ body.dark-theme .home__social-follow::after{
 }
 
 .footer__logo-img {
-  width: 25px; /* Logo ligeramente más pequeño */
+  width: 25px;
   height: 25px;
   object-fit: contain;
   filter: brightness(0) invert(1);
@@ -703,13 +676,13 @@ body.dark-theme .home__social-follow::after{
   font-size: var(--smaller-font-size);
   color: var(--first-color-lighten);
   display: block;
-  margin-bottom: 1rem; /* Espacio justo para separar del contenido */
+  margin-bottom: 1rem;
 }
 
 .footer__links {
   display: flex;
   flex-direction: column;
-  row-gap: 1rem; /* Menos espacio entre links */
+  row-gap: 1rem;
 }
 
 .footer__link:hover {
@@ -722,7 +695,7 @@ body.dark-theme .home__social-follow::after{
 }
 
 .footer__social {
-  font-size: 1.15rem; /* Iconos ligeramente más compactos */
+  font-size: 1.15rem;
   color: #FFF;
   transition: transform 0.3s, color 0.3s;
 }
@@ -736,7 +709,7 @@ body.dark-theme .home__social-follow::after{
   font-size: var(--smaller-font-size);
   text-align: center;
   color: var(--first-color-light);
-  margin-top: 1.5rem; /* REDUCIDO: El copyright sube más cerca del contenido */
+  margin-top: 1.5rem;
 }
 
 .footer__title,
@@ -746,21 +719,19 @@ body.dark-theme .home__social-follow::after{
   color: #FFF;
 }
 
-/* Ajustes para pantalla grande */
 @media screen and (min-width: 768px) {
   .footer__bg {
-    padding: 1rem 0 1.5rem; /* Aún más delgado en PC */
+    padding: 1rem 0 1.5rem;
   }
   
   .footer__container {
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
-    /* REDUCIDO: Menos espacio vertical entre filas */
     row-gap: 1rem; 
   }
   
   .footer__subtitle {
-    margin-bottom: 0; /* En PC eliminamos margen extra */
+    margin-bottom: 0;
   }
 
   .footer__links {
@@ -774,7 +745,7 @@ body.dark-theme .home__social-follow::after{
   }
   
   .footer__copy {
-    margin-top: 2rem; /* Mucho más pegado que antes */
+    margin-top: 2rem;
   }
 }
 
@@ -804,7 +775,6 @@ body.dark-theme .home__social-follow::after{
   .home__img{ width: 350px; }
   .home__description{ padding-right: 7rem; }
   .about__img{ width: 380px; }
-  /* Ajuste para Projects en pantallas grandes */
   .projects__container{ grid-template-columns: repeat(3, 1fr); }
   .projects__bg{ padding: 3.5rem 2.5rem; }
 }
