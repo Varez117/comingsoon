@@ -233,6 +233,9 @@ h2.section__title{ text-align: left; }
   line-height: 1.4;
   color: #e0e0e0;
   position: relative;
+  contain: strict;
+  display: block;  /* Asegura comportamiento de bloque */
+  transform: translateZ(0);
 }
 .codigo-vscode { overflow: hidden; }
 .cursor { animation: blink 0.8s infinite; color: #7f5af0; font-weight: bold; }
@@ -339,8 +342,71 @@ h2.section__title{ text-align: left; }
   margin-bottom: 1.5rem;
 }
 .about__skills-card {
-  background-color: var(--first-color-lighten);
-  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+
+
+/* El icono base */
+.skills__tag i {
+  font-size: 1.25rem;
+  transition: color 0.4s ease;
+}
+
+.skills__tags {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+
+.skills__tag {
+  /* MODO CLARO (Por defecto) */
+  background-color: var(--first-color-lighten); /* Fondo lila suave */
+  color: var(--title-color); /* Texto oscuro */
+  
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-size: var(--small-font-size);
+  font-weight: var(--font-medium);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: default;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  
+  /* CLAVE: Transición suave para cuando cambias de tema */
+  transition: background-color 0.4s ease, color 0.4s ease, transform 0.3s ease;
+}
+
+/* === MODO OSCURO (Solución al problema) === */
+body.dark-theme .skills__tag {
+  /* Cambiamos el fondo a un gris/morado oscuro para que el texto blanco se lea bien */
+  background-color: hsl(var(--hue), 15%, 25%); 
+  /* Opcional: si quieres el texto de un color específico en dark mode, defínelo aquí.
+     Por defecto heredará el blanco de body.dark-theme, que se ve perfecto sobre este fondo. */
+  color: var(--text-color); 
+  box-shadow: none; /* Quitamos sombra en dark mode para un look más plano/limpio */
+}
+body.dark-theme .skills__tag:hover {
+  background-color: var(--first-color); /* Morado vibrante */
+  color: #FFF !important; /* Texto blanco forzado */
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px hsla(var(--hue), 60%, 50%, 0.3); /* Sombra morada brillante */
+}
+
+/* === HOVER (Funciona en ambos modos) === */
+.skills__tag:hover {
+  background-color: var(--first-color); /* Morado vibrante */
+  color: #FFF !important; /* Texto blanco forzado */
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px hsla(var(--hue), 60%, 50%, 0.3); /* Sombra morada brillante */
+}
+
+/* En hover, forzamos que el icono también sea blanco */
+.skills__tag:hover i {
+  color: #FFF !important;
 }
 .skills__title {
   font-weight: var(--font-semi-bold);
@@ -511,7 +577,7 @@ h2.section__title{ text-align: left; }
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  color: var(--first-color);
+  color: var(--first-color-alt);
   font-weight: 600;
   font-size: var(--small-font-size);
   transition: color 0.3s;
@@ -542,52 +608,214 @@ body.dark-theme .home__social-follow::after{
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   position: relative;
 }
-.timeline__year {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background-color: var(--first-color);
-  color: white;
-  padding: 0.2rem 0.6rem;
-  border-radius: 5px;
-  font-weight: var(--font-medium);
-  font-size: var(--small-font-size);
-  text-align: center;
-  width: auto;
-  transform: none;
+
+/* =============== CERTIFICATIONS SECTION =============== */
+
+.certifications__section {
+  padding-top: 2rem; /* Un poco más de aire arriba */
 }
-.timeline__title {
-  font-size: var(--h2-font-size);
-  color: var(--title-color);
-  margin-bottom: var(--mb-0-5);
-  margin-top: 2.2rem;
+
+/* Título de la sub-sección */
+.certifications__title {
+  font-size: var(--h3-font-size);
+  margin-bottom: 2rem;
+  color: var(--first-color); /* Color por defecto (Modo Claro) */
 }
-.timeline__school {
-  font-weight: var(--font-medium);
+
+/* En Modo Oscuro, forzamos el color lila para que coincida con "Formación Académica" */
+body.dark-theme .certifications__title {
+  color: #dbadfc; 
+}
+
+.certifications__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.certification__card {
+  background-color: var(--container-color);
+  padding: 1.25rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.certification__card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-color: var(--first-color-light);
+}
+
+.certification__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+/* Agrupamos Icono y Categoría */
+.certification__icon-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+
+.certification__icon {
+  font-size: 1.5rem;
   color: var(--first-color);
-  margin-bottom: var(--mb-0-75);
+  background-color: var(--first-color-lighten);
+  padding: 0.4rem;
+  border-radius: 0.5rem;
 }
-.timeline__description {
+
+/* ESTILO DE LA NUEVA ETIQUETA DE CATEGORÍA */
+.certification__category {
   font-size: var(--small-font-size);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  /* CAMBIO: Usamos el color de título (más oscuro) en lugar de text-color-light */
+  color: var(--title-color); 
+  /* CAMBIO: Fondo un poco más sólido para contraste */
+  background-color: rgba(0,0,0,0.06); 
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+}
+
+.certification__year {
+  font-size: var(--small-font-size);
+  font-weight: var(--font-medium);
+  /* CAMBIO: Texto más oscuro para pasar la prueba de contraste AA */
+  color: var(--title-color); 
+  background-color: rgba(0,0,0,0.06);
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.25rem;
+   /* Agregamos un borde sutil para definirlo mejor */
+}
+
+.certification__title {
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-semi-bold);
+  color: var(--title-color);
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.certification__issuer {
+  font-size: var(--smaller-font-size);
+  color: var(--text-color-light);
+  font-weight: var(--font-medium);
+}
+
+span.view {
+  font-size: 1rem;
   color: var(--text-color);
-  line-height: 1.6;
-  margin-top: 0.5rem;
+  padding: 0%;
+  cursor: pointer;
+  float: right;
+  transition: color 0.3s ease;
+  
 }
-@media screen and (max-width: 600px) {
-  .timeline__year {
-    position: static;
-    display: inline-block;
-    margin-bottom: 0.5rem;
-    background-color: var(--first-color);
-    color: white;
+
+span.view:hover{
+  color: var(--first-color);
+  scale: 1.1;
+}
+
+/* Agrega esto al final de styles.css */
+
+/* El fondo oscuro transparente */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; 
+    z-index: 1000; /* Por encima de todo */
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0,0,0,0.8); /* Fondo negro semitransparente */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Clase para mostrar el modal (se usa desde JS) */
+.modal.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+}
+
+/* La caja blanca del contenido */
+.modal-content {
+    background-color: var(--container-color);
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 800px;
+    height: 80%; /* Altura del modal */
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+}
+
+/* El botón de cerrar (X) */
+.close-btn {
+    color: var(--title-color);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    align-self: flex-end;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: color 0.3s;
+}
+
+.close-btn:hover {
+    color: var(--first-color);
+}
+
+/* Ajuste del iframe */
+iframe {
+    border: none;
+    flex-grow: 1; /* Ocupa el espacio restante */
     border-radius: 5px;
-    padding: 0.2rem 0.6rem;
-    font-size: var(--small-font-size);
-    transform: none;
-  }
-  .timeline { padding-left: 0; border-left: none; }
-  .timeline__item { margin-bottom: var(--mb-1-5); }
+    background-color: white; /* Para asegurar contraste si el PDF es transparente */
 }
+
+/* === MODO OSCURO === */
+body.dark-theme .certification__card {
+  box-shadow: none;
+  background-color: hsl(var(--hue), 8%, 16%);
+}
+
+body.dark-theme .certification__card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  border-color: var(--first-color-dark);
+}
+
+body.dark-theme .certification__year {
+  background-color: hsl(var(--hue), 8%, 12%);
+}
+
+body.dark-theme .certification__icon {
+  background-color: hsl(var(--hue), 15%, 25%);
+  color: var(--first-color-light);
+}
+
+body.dark-theme .certification__category {
+  color: var(--title-color); /* Mismo gris claro */
+  background-color: rgba(255,255,255,0.05); /* Fondo blanco muy transparente */
+}
+
 .btn-view:hover { background-color: var(--first-color-alt); }
 .btn-view {
   display: inline-block;
@@ -679,6 +907,12 @@ body.dark-theme .home__social-follow::after{
   margin-bottom: 1rem;
 }
 
+.footer__link {
+  /* Agregamos padding para que el área de toque sea más grande */
+  padding: 0.5rem; 
+  display: inline-block; /* Necesario para que el padding funcione */
+}
+
 .footer__links {
   display: flex;
   flex-direction: column;
@@ -695,9 +929,11 @@ body.dark-theme .home__social-follow::after{
 }
 
 .footer__social {
+  padding: .5rem;
   font-size: 1.15rem;
   color: #FFF;
   transition: transform 0.3s, color 0.3s;
+  display: inline-flex;
 }
 
 .footer__social:hover {
