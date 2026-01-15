@@ -162,3 +162,50 @@ document.addEventListener("DOMContentLoaded", () => {
     
     escribir();
 });
+
+/* Agrega esto al final de main.js */
+
+/*=============== PDF MODAL LOGIC ===============*/
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById("pdfModal");
+    const modalContent = document.querySelector(".modal-content");
+    const closeBtn = document.querySelector(".close-btn");
+    const pdfFrame = document.getElementById("pdfFrame");
+    
+    // Seleccionar todos los botones de "ver" (los ojos)
+    const viewButtons = document.querySelectorAll(".view");
+
+    // Función para abrir el modal
+    viewButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            const pdfUrl = btn.getAttribute("data-pdf");
+            if (pdfUrl) {
+                pdfFrame.src = pdfUrl; // Carga el PDF en el iframe
+                modal.classList.add("show"); // Muestra el modal
+            } else {
+                console.error("No se encontró la ruta del PDF en el atributo data-pdf");
+            }
+        });
+    });
+
+    // Función para cerrar el modal
+    function closeModal() {
+        modal.classList.remove("show");
+        // Limpiamos el src para detener la carga/video si fuera necesario
+        setTimeout(() => {
+            pdfFrame.src = ""; 
+        }, 300); // Espera a que termine la animación
+    }
+
+    // Evento cerrar con la X
+    if(closeBtn) {
+        closeBtn.addEventListener("click", closeModal);
+    }
+
+    // Evento cerrar haciendo clic fuera del contenido
+    window.addEventListener("click", (e) => {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+});
