@@ -174,13 +174,26 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Seleccionar todos los botones de "ver" (los ojos)
     const viewButtons = document.querySelectorAll(".view");
+    const openLink = document.getElementById("pdfOpenLink");
+    const isMobile = window.matchMedia("(max-width: 768px), (pointer: coarse)").matches;
 
     // Función para abrir el modal
     viewButtons.forEach(btn => {
+        // Permite abrir el certificado con teclado (Enter / Espacio)
+        btn.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") { e.preventDefault(); btn.click(); }
+        });
         btn.addEventListener("click", () => {
             const pdfUrl = btn.getAttribute("data-pdf");
             if (pdfUrl) {
+                // En celulares los PDF casi nunca se ven dentro de un iframe:
+                // ahí se abre directamente en una pestaña nueva.
+                if (isMobile) {
+                    window.open(pdfUrl, "_blank", "noopener");
+                    return;
+                }
                 pdfFrame.src = pdfUrl; // Carga el PDF en el iframe
+                if (openLink) openLink.href = pdfUrl;
                 modal.classList.add("show"); // Muestra el modal
             } else {
                 console.error("No se encontró la ruta del PDF en el atributo data-pdf");
@@ -193,7 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
         modal.classList.remove("show");
         // Limpiamos el src para detener la carga/video si fuera necesario
         setTimeout(() => {
-            pdfFrame.src = ""; 
+            pdfFrame.src = "about:blank";
         }, 300); // Espera a que termine la animación
     }
 
@@ -201,6 +214,17 @@ document.addEventListener('DOMContentLoaded', () => {
     if(closeBtn) {
         closeBtn.addEventListener("click", closeModal);
     }
+
+    if (closeBtn) {
+        closeBtn.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") { e.preventDefault(); closeModal(); }
+        });
+    }
+
+    // Cerrar con la tecla Escape
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && modal.classList.contains("show")) closeModal();
+    });
 
     // Evento cerrar haciendo clic fuera del contenido
     window.addEventListener("click", (e) => {

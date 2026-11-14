@@ -767,15 +767,30 @@ span.view:hover{
     flex-direction: column;
 }
 
+/* Barra superior del modal: enlace + cerrar */
+.modal-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.modal-open-link {
+    color: var(--first-color);
+    font-size: var(--small-font-size);
+    font-weight: var(--font-medium);
+    display: inline-flex;
+    align-items: center;
+    gap: .25rem;
+}
+
 /* El botón de cerrar (X) */
 .close-btn {
     color: var(--title-color);
     float: right;
     font-size: 28px;
     font-weight: bold;
-    align-self: flex-end;
     cursor: pointer;
-    margin-bottom: 10px;
     transition: color 0.3s;
 }
 
